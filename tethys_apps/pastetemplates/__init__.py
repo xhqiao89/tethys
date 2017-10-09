@@ -88,6 +88,8 @@ class TethysAppTemplate(Template):
                 sys.exit(1)
 
         vars['project'] = project
+        # Only used for pywps wps server
+        vars['project_process'] = project.replace('_', '').lower()
 
         # Derive the project_url from the project name
         vars['project_url'] = project.replace('_', '-').lower()
