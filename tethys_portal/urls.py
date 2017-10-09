@@ -62,7 +62,7 @@ urlpatterns = [
     url(r'^user/(?P<username>[\w.@+-]+)/', include(user_urls, namespace='user')),
     url(r'^apps/', include('tethys_apps.urls')),
     url(r'^tethys_wps/$', wps_wsgi.wps_wsgi),
-    url(r'^tethys_wps/outputs/(?P<fn>.*)', outputs.outputs),
+    url(r'^tethys_wps/outputs/(?P<fn>.*)/$', outputs.outputs),
     url(r'^developer/', include(developer_urls)),
     url(r'^handoff/(?P<app_name>[\w-]+)/$', tethys_apps_views.handoff_capabilities, name='handoff_capabilities'),
     url(r'^handoff/(?P<app_name>[\w-]+)/(?P<handler_name>[\w-]+)/$', tethys_apps_views.handoff, name='handoff'),
